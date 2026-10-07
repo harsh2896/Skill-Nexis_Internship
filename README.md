@@ -18,3 +18,4 @@ npm install
 npm run dev
 ```
 Posts come from `src/data/posts.json`. Search and category filter are in `src/App.jsx`.
+"# Skill-Nexis_Internship" 
