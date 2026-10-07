@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harsh Prajapati | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="logo" href="#top">Harsh Prajapati</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+    <nav id="nav">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <h1>I build web apps with the MERN stack.</h1>
+      <p>BCA graduate from Lucknow, looking for an entry-level Software Developer role.</p>
+      <a class="btn" href="#contact">Get in touch</a>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I am a fresher who enjoys turning ideas into working web applications. I work with
+        React.js, Node.js, Express.js and MongoDB, and I build REST APIs that connect them.
+        I am comfortable in Hindi and English.
+      </p>
+      <ul class="skills">
+        <li>React.js</li><li>Node.js</li><li>Express.js</li><li>MongoDB</li>
+        <li>REST APIs</li><li>HTML5 &amp; CSS3</li><li>JavaScript (ES6+)</li>
+      </ul>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="timeline">
+        <article>
+          <h3>BCA</h3>
+          <p>Goel Institute of Higher Studies Mahavidyalaya, Lucknow (University of Lucknow)</p>
+          <span>CGPA 8.03</span>
+        </article>
+        <article>
+          <h3>Class 12</h3>
+          <span>62%</span>
+        </article>
+        <article>
+          <h3>Class 10</h3>
+          <span>87%</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Blog App</h3>
+          <p>MERN blog with login, create/edit posts and comments. Replace with your own project.</p>
+          <small>React, Node, Express, MongoDB</small>
+        </article>
+        <article class="card">
+          <h3>Task Manager</h3>
+          <p>Add, complete and delete tasks with a REST API backend. Replace with your own project.</p>
+          <small>React, Express, MongoDB</small>
+        </article>
+        <article class="card">
+          <h3>E-commerce Landing Page</h3>
+          <p>Responsive product landing page built with Flexbox and Grid.</p>
+          <small>HTML, CSS, JavaScript</small>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:hhp2896@gmail.com">hhp2896@gmail.com</a> &nbsp;|&nbsp; Phone: <a href="tel:+919696275336">9696275336</a></p>
+      <form id="contactForm" novalidate>
+        <label for="name">Name</label>
+        <input id="name" type="text" />
+        <span class="error" id="nameErr"></span>
+
+        <label for="email">Email</label>
+        <input id="email" type="email" />
+        <span class="error" id="emailErr"></span>
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="4"></textarea>
+        <span class="error" id="messageErr"></span>
+
+        <button class="btn" type="submit">Send message</button>
+        <p class="success" id="success" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>&copy; <span id="year"></span> Harsh Prajapati</footer>
+
+  <script>
+    // Responsive nav toggle
+    const menuBtn = document.getElementById("menuBtn");
+    const nav = document.getElementById("nav");
+    menuBtn.addEventListener("click", () => {
+      const open = nav.classList.toggle("open");
+      menuBtn.setAttribute("aria-expanded", open);
+    });
+    nav.addEventListener("click", () => nav.classList.remove("open"));
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Form validation
+    const form = document.getElementById("contactForm");
+    const setError = (id, msg) => (document.getElementById(id + "Err").textContent = msg);
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      const message = form.message.value.trim();
+      let ok = true;
+
+      if (name.length < 2) { setError("name", "Enter your name (at least 2 characters)."); ok = false; }
+      else setError("name", "");
+
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setError("email", "Enter a valid email address."); ok = false; }
+      else setError("email", "");
+
+      if (message.length < 10) { setError("message", "Message must be at least 10 characters."); ok = false; }
+      else setError("message", "");
+
+      const success = document.getElementById("success");
+      if (ok) { success.textContent = "Thanks, " + name + "! Your message is ready to send."; form.reset(); }
+      else success.textContent = "";
+    });
+  </script>
+</body>
+</html>

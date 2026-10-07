@@ -1,0 +1,9 @@
+[
+  { "id": 1, "title": "Getting Started with React", "category": "React", "author": "Harsh", "date": "2026-04-02", "excerpt": "Components, props and state are the three ideas you need before anything else in React." },
+  { "id": 2, "title": "CSS Flexbox in 10 Minutes", "category": "CSS", "author": "Harsh", "date": "2026-04-09", "excerpt": "Align, space and wrap items in one dimension without any layout hacks." },
+  { "id": 3, "title": "CSS Grid for Real Layouts", "category": "CSS", "author": "Harsh", "date": "2026-04-16", "excerpt": "Build a responsive card grid with auto-fit and minmax in a single line." },
+  { "id": 4, "title": "JavaScript ES6 Features You Will Use Daily", "category": "JavaScript", "author": "Harsh", "date": "2026-04-23", "excerpt": "Arrow functions, destructuring, spread, template literals and modules explained simply." },
+  { "id": 5, "title": "Understanding the useState Hook", "category": "React", "author": "Harsh", "date": "2026-04-30", "excerpt": "How state updates trigger re-renders and why you should never mutate state directly." },
+  { "id": 6, "title": "Semantic HTML5 and Accessibility", "category": "HTML", "author": "Harsh", "date": "2026-05-07", "excerpt": "Use the right tags so screen readers and search engines understand your page." },
+  { "id": 7, "title": "Building a REST API with Express", "category": "Node.js", "author": "Harsh", "date": "2026-05-14", "excerpt": "Routes, middleware and JSON responses: the minimum you need for a working API." }
+]
