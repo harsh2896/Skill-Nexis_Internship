@@ -1,0 +1,62 @@
+:root { --ink:#14213d; --paper:#f7f8fa; --line:#d9dde5; --accent:#e08a00; --muted:#5a6478; --danger:#b3261e; --ok:#1b6b3a; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: "Segoe UI", system-ui, sans-serif; background: var(--paper); color: var(--ink); line-height: 1.5; }
+
+.nav { display: flex; justify-content: space-between; align-items: center; background: var(--ink); color: #fff; padding: 12px 24px; }
+.nav a { color: #fff; text-decoration: none; margin-left: 16px; }
+.nav .brand { font-weight: 700; margin: 0; }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+
+.container { max-width: 760px; margin: 0 auto; padding: 24px; }
+.panel { background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+.auth { max-width: 380px; margin: 48px auto; }
+.auth h2, .panel h2 { margin-bottom: 12px; }
+.switch { margin-top: 14px; color: var(--muted); }
+.switch a { color: var(--ink); font-weight: 600; }
+
+.form { display: flex; flex-direction: column; gap: 8px; }
+.form label { font-weight: 600; margin-top: 4px; }
+input, select { padding: 10px; border: 1px solid var(--line); border-radius: 6px; font: inherit; width: 100%; background: #fff; color: var(--ink); }
+input:focus, select:focus { outline: 2px solid var(--accent); border-color: transparent; }
+input[type="checkbox"] { width: 20px; height: 20px; accent-color: var(--accent); }
+
+.btn { font: inherit; font-weight: 600; padding: 9px 18px; border-radius: 6px; border: 2px solid transparent; background: var(--accent); color: var(--ink); cursor: pointer; }
+.btn:disabled { opacity: .6; cursor: not-allowed; }
+.btn-outline { background: transparent; border-color: var(--ink); color: var(--ink); }
+.btn-outline.light { border-color: #fff; color: #fff; }
+.btn-danger { background: var(--danger); color: #fff; }
+.btn-small { padding: 4px 12px; font-size: .85rem; }
+.form .btn { align-self: flex-start; margin-top: 6px; }
+
+.error { color: var(--danger); font-size: .88rem; }
+.error-banner { background: #fdecea; color: var(--danger); border: 1px solid #f5c2be; padding: 10px 14px; border-radius: 6px; margin-bottom: 16px; }
+.empty { color: var(--muted); padding: 24px 0; text-align: center; }
+
+.list-title { margin: 8px 0 12px; }
+.list-title small { color: var(--muted); font-weight: 400; }
+.tasks { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.task { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 14px; }
+.task-body { flex: 1; min-width: 0; }
+.task-body p { color: var(--muted); font-size: .92rem; }
+.task.done .title { text-decoration: line-through; color: var(--muted); }
+.task-actions { display: flex; gap: 6px; }
+@media (max-width: 560px) { .task { flex-wrap: wrap; } .task-actions { width: 100%; } }
+
+/* Task Manager extras */
+.row { display: flex; gap: 10px; flex-wrap: wrap; }
+.row > * { flex: 1; min-width: 140px; }
+.tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+.tab { font: inherit; padding: 6px 16px; border: 1px solid var(--ink); background: transparent; color: var(--ink); border-radius: 999px; cursor: pointer; }
+.tab span { font-size: .8rem; opacity: .75; margin-left: 4px; }
+.tab.active { background: var(--ink); color: #fff; }
+.filters { margin-bottom: 16px; }
+.task-side { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; min-width: 150px; }
+.task-side select { padding: 6px; }
+.meta { display: flex; gap: 12px; align-items: center; margin-top: 6px; font-size: .85rem; color: var(--muted); }
+.badge { padding: 1px 10px; border-radius: 999px; font-weight: 600; text-transform: capitalize; }
+.badge-high { background: #fdecea; color: var(--danger); }
+.badge-medium { background: #fff3d6; color: #8a5a00; }
+.badge-low { background: #e4f4ea; color: var(--ok); }
+.overdue { color: var(--danger); font-weight: 600; }
+.task-body input + input { margin-top: 6px; }
+@media (max-width: 560px) { .task-side { width: 100%; align-items: stretch; } }
